@@ -29,7 +29,7 @@ namespace Lab5
                 int x = rnd.Next(w, panelDraw.Width - w);
                 int y = rnd.Next(h, panelDraw.Height - h);
                 Color c = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                figures.Add(new MyRectangle(x, y, c, 2, w, h));
+                figures.Add(new MyRectangle(x, y, c, Color.Black, 2, w, h));
             }
 
             for (int i = 0; i < circleCount; i++)
@@ -38,7 +38,7 @@ namespace Lab5
                 int x = rnd.Next(r, panelDraw.Width - r);
                 int y = rnd.Next(r, panelDraw.Height - r);
                 Color c = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                figures.Add(new MyCircle(x, y, c, 2, r));
+                figures.Add(new MyCircle(x, y, c, Color.Black, 2, r));
             }
         }
 

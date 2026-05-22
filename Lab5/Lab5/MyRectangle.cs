@@ -8,21 +8,24 @@ namespace Lab5
         public int Width;
         public int Height;
 
-        public MyRectangle(int x, int y, Color color, int thickness, int width, int height)
-            : base(x, y, color, thickness)
+        public MyRectangle(int x, int y, Color color, Color outlineColor, int thickness, int width, int height)
+            : base(x, y, color, outlineColor, thickness)
         {
             Width = width;
             Height = height;
         }
 
-        // Отрисовка прямоугольника
+        // Отрисовка прямоугольника (заливка + контур)
         public override void Draw(Graphics g)
         {
-            Pen pen = new Pen(FigureColor, LineThickness);
+            Pen pen = new Pen(OutlineColor, LineThickness);
+            SolidBrush brush = new SolidBrush(FigureColor);
             int left = X - Width / 2;
             int top = Y - Height / 2;
+            g.FillRectangle(brush, left, top, Width, Height);
             g.DrawRectangle(pen, left, top, Width, Height);
             pen.Dispose();
+            brush.Dispose();
         }
 
         // Площадь прямоугольника

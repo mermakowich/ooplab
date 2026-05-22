@@ -7,14 +7,16 @@ namespace Lab5
     {
         public int X;              // координата X центра
         public int Y;              // координата Y центра
-        public Color FigureColor;  // цвет фигуры
+        public Color FigureColor;  // цвет заливки
+        public Color OutlineColor; // цвет контура
         public int LineThickness;  // толщина линии контура
 
-        public GeometricFigure(int x, int y, Color color, int thickness)
+        public GeometricFigure(int x, int y, Color color, Color outlineColor, int thickness)
         {
             X = x;
             Y = y;
             FigureColor = color;
+            OutlineColor = outlineColor;
             LineThickness = thickness;
         }
 

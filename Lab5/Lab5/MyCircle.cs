@@ -8,18 +8,21 @@ namespace Lab5
     {
         public int Radius;
 
-        public MyCircle(int x, int y, Color color, int thickness, int radius)
-            : base(x, y, color, thickness)
+        public MyCircle(int x, int y, Color color, Color outlineColor, int thickness, int radius)
+            : base(x, y, color, outlineColor, thickness)
         {
             Radius = radius;
         }
 
-        // Отрисовка круга
+        // Отрисовка круга (заливка + контур)
         public override void Draw(Graphics g)
         {
-            Pen pen = new Pen(FigureColor, LineThickness);
+            Pen pen = new Pen(OutlineColor, LineThickness);
+            SolidBrush brush = new SolidBrush(FigureColor);
+            g.FillEllipse(brush, X - Radius, Y - Radius, Radius * 2, Radius * 2);
             g.DrawEllipse(pen, X - Radius, Y - Radius, Radius * 2, Radius * 2);
             pen.Dispose();
+            brush.Dispose();
         }
 
         // Площадь круга
