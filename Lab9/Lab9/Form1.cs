@@ -124,7 +124,7 @@ namespace Lab9
                         // AD|имя|заголовок|цена
                         string time = DateTime.Now.ToString("HH:mm:ss");
                         display = "[" + time + "] " + parts[1] +
-                                  ": " + parts[2] + " — " + parts[3] + " руб.";
+                                  ": " + parts[2] + " – " + parts[3] + " руб.";
                     }
                     else if (type == "SYS" && parts.Length >= 2)
                     {
